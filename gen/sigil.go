@@ -1,12 +1,8 @@
 package gen
 
 import (
-	"fmt"
 	"image"
 	"image/color"
-	"io"
-
-	"github.com/ajstarks/svgo"
 )
 
 type Sigil struct {
@@ -27,23 +23,6 @@ func (s *Sigil) Make(width int, inverted bool, data []byte) image.Image {
 		}
 	}
 	return img
-}
-
-func (s *Sigil) MakeSVG(w io.Writer, width int, inverted bool, data []byte) {
-	canvas := svg.New(w)
-	fg, bg := s.colors(data[0], inverted)
-	fgFill, bgFill := svgFill(fg), svgFill(bg)
-
-	canvas.Start(width, width)
-	canvas.Rect(0, 0, width, width, bgFill)
-	for _, rect := range s.cells(width, data[1:]) {
-		canvas.Rect(rect.Min.X, rect.Min.Y, rect.Dx(), rect.Dy(), fgFill)
-	}
-	canvas.End()
-}
-
-func svgFill(c color.NRGBA) string {
-	return fmt.Sprintf("fill:rgba(%d,%d,%d,%.2g);", c.R, c.G, c.B, float64(c.A)*1/255)
 }
 
 func (s *Sigil) fill(cell int, data []byte) bool {
