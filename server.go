@@ -45,7 +45,7 @@ func (handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		ext = ""
 	}
 
-	width := 48
+	width := 120
 	q := r.URL.Query()
 	if ws := q.Get("w"); ws != "" {
 		var err error
