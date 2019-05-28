@@ -1,3 +1,3 @@
 #!/bin/sh
 
-go run server.go
+go run handler.go server.go
