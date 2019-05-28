@@ -1,3 +1,3 @@
 #!/bin/sh
 
-go build -o sigil server.go
+go build -o sigil handler.go server.go
