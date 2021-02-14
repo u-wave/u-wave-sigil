@@ -11,7 +11,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/welovekpop/u-wave-sigil/gen"
+	"github.com/u-wave/u-wave-sigil/gen"
 )
 
 var config = gen.Sigil{
