@@ -1,3 +1,7 @@
+## Obsolete
+
+üWave Sigil is succeeded by [sigil-rs](https://github.com/goto-bus-stop/sigil-rs).
+
 # üWave Sigil
 
 Adaptation of Cupcake's [Sigil](https://github.com/cupcake/sigil), for use by üWave servers as a default avatar generator.
